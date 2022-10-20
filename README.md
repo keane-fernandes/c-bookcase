@@ -11,7 +11,8 @@
 <p align="center">
   <a href="#Features">Features</a> |
   <a href="#Overview">Overview</a> |
-  <a href="#Usage">Usage</a>   |
+  <a href="#Design">Design</a>     |
+  <a href="#Usage">Usage</a>       |
   <a href="#License">License</a>   |
 </p>
 
@@ -63,6 +64,13 @@ and the second row and beyond represent the shelves (books and free spaces) acco
 | C           | Cyan book        |
 | W           | White book       |
 
+# Design
+A brute-force algorithm is used for searching over all moves to make the bookcase happy. The algorithm is very similar to a queue and hence is a breadth-first search. Here's a summary of the steps:
+1. Create a linked list of bookcases.
+2. The initial bookcase is put into the front of this linked list.
+3. Take a bookcase from the front of the list.
+4. For this (parent) bookcase, find the resulting (child) bookcases which can be created from all the valid possible single book moves. Put each of these bookcases into the end of the list. There may be as many as height × (height − 1) of these. If a happy bookcase is found, stop. Else, go to 3.
+
 # Usage
 Ensure you have [GCC](https://gcc.gnu.org) installed on your machine. Once you have done so, run the following command on your terminal:
 
@@ -91,6 +99,8 @@ to which the output on the terminal would be:
 <p align="center">
   <img width=40 src="docs/bc_six.png">
 </p>
+
+Make your own bookcase files and try this sorting algorithm out!
 
 # License
 
