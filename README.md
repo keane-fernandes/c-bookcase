@@ -15,10 +15,6 @@
   <a href="#License">License</a>   |
 </p>
 
-<p align="center">
-<img src="./docs/logo.jpg/../bookcase.gif" width=50% />
-</p>
-
 # Features
 - Optimised breadth-first search algorithm
 - Central focus on memory and performance
