@@ -78,7 +78,7 @@ make sort_bc_five
 to which the output on the terminal would be:
 
 <p align="center">
-  <img width=100 src="docs/bc_five.jpg">
+  <img width=50 src="docs/bc_five.jpg">
 </p>
 
 Another example would be:
@@ -89,7 +89,7 @@ make sort_bc_six
 to which the output on the terminal would be:
 
 <p align="center">
-  <img width=80 src="docs/bc_six.png">
+  <img width=40 src="docs/bc_six.png">
 </p>
 
 # License
