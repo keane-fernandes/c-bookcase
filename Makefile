@@ -11,5 +11,8 @@ LDLIBS = -lm
 bookcase : bookcase.c neillsimplescreen.c neillsimplescreen.h
 	$(CC) neillsimplescreen.c bookcase.c -o bookcase $(COMMON)
 
+run_bookcase: bookcase
+	./bookcase
+
 clean:
-	rm -f forest
+	rm -f bookcase
