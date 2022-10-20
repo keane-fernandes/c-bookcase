@@ -11,7 +11,8 @@
 <p align="center">
   <a href="#Features">Features</a> |
   <a href="#Overview">Overview</a> |
-  <a href="#License">License</a>
+  <a href="#Usage">Usage</a>   |
+  <a href="#License">License</a>   |
 </p>
 
 <p align="center">
@@ -24,7 +25,47 @@
 - Test driven development using assertions
 
 # Overview
+This program reads in a bookcase definition file (found in the [bookcases](bookcases) directory in this repository), and shows the 'moves' to make the bookcase happy.
 
+A bookcase is only happy if:
+- Each shelf only has books of one colour (or is empty).
+- All books of the same colour are on the same shelf.
+- The only books that exist are black (K), red (R), green (G), yellow (Y), blue (B), magenta (M), cyan (C) or white (W).
+
+The following rules apply with regards to 
+1. You can only move one book at a time.
+2. The only book that can move is the rightmost one from each shelf. 
+3. The book must move to become the rightmost book on its new shelf. 
+4. You can’t put more books on a shelf than its maximum size.
+
+A bookcase definition file looks something like this:
+
+```bc
+4 3 7
+RG.
+GR.
+CY.
+YC.
+```
+
+where the first row will always have three digits where: 
+- the first digit refers to the number of shelves in the bookcase
+- the second digit refers to the number of books a shelf can hold
+- the third digit is optional and refers to the minimum number of moves needed to make the bookcase happy 
+
+and the second row and beyond represent the shelves (books and free spaces) according to the table below:
+
+| Character   | Description      |
+| ----------- | ---------------- |
+| .           | Free space       |
+| K           | Black book       |
+| R           | Red book         |
+| G           | Green book       |
+| Y           | Yellow book      |
+| B           | Blue book        |
+| M           | Magenta book     |
+| C           | Cyan book        |
+| W           | White book       |
 
 # Usage
 Ensure you have [GCC](https://gcc.gnu.org) installed on your machine. Once you have done so, run the following command on your terminal:
@@ -33,12 +74,27 @@ Ensure you have [GCC](https://gcc.gnu.org) installed on your machine. Once you h
 make bookcase
 ```
 
-Run the executable by then typing in the following command on your terminal:
+There are ten bookcases in the [bookcases directory](bookcases) on which you can run the sorting algorithm and there are commands in the [Makefile](Makefile) to run each of them. As an example, if you want to run it on bookcase five from the [bookcases directory](bookcases), type in the following command on your terminal:
 
 ```bash
-./bookcase
+make sort_bc_five
 ```
+to which the output on the terminal would be:
 
+<p align="center">
+  <img width=100 src="docs/bc_five.jpg">
+</p>
+
+Another example would be:
+
+```bash
+make sort_bc_six
+```
+to which the output on the terminal would be:
+
+<p align="center">
+  <img width=80 src="docs/bc_six.png">
+</p>
 
 # License
 
